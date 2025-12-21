@@ -1,3 +1,4 @@
-./objects/dev_frame.o: C:\32_temp_project\Driver_Framework\dev_frame.c \
-  C:\32_temp_project\Driver_Framework\dev_frame.h \
-  C:\32_temp_project\Middleware\shell\shell_style.h
+./objects/dev_frame.o: \
+  C:\General_template_Project\Driver_Framework\dev_frame.c \
+  C:\General_template_Project\Driver_Framework\dev_frame.h \
+  C:\General_template_Project\Middleware\shell\shell_style.h

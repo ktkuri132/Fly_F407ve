@@ -1,3 +1,3 @@
-./objects/shell.o: C:\32_temp_project\Middleware\shell\shell.c \
-  C:\32_temp_project\Middleware\shell\shell.h \
-  C:\32_temp_project\Middleware\shell\shell_style.h
+./objects/shell.o: C:\General_template_Project\Middleware\shell\shell.c \
+  C:\General_template_Project\Middleware\shell\shell.h \
+  C:\General_template_Project\Middleware\shell\shell_style.h

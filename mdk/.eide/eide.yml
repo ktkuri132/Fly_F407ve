@@ -11,32 +11,48 @@ virtualFolder:
     - name: app
       files:
         - path: ../app/main.c
+        - path: ../app/control.c
+        - path: ../app/init.c
       folders: []
     - name: devive
-      files: []
+      files:
+        - path: ../../../../../General_template_Project/Device/mpu6050/inv_mpu.c
+        - path: ../../../../../General_template_Project/Device/mpu6050/inv_mpu_dmp_motion_driver.c
       folders: []
     - name: driver
-      files: []
+      files:
+        - path: ../bsp/i2c_bus.c
+        - path: ../bsp/delay.c
+        - path: ../bsp/i2c_dev.c
+        - path: ../bsp/adc.c
+        - path: ../bsp/led.c
+        - path: ../bsp/misc.c
+        - path: ../bsp/nvic.c
+        - path: ../bsp/usart.c
+        - path: ../bsp/irq.c
       folders: []
     - name: drivrt_framework
       files:
-        - path: ../../../../../../../32_temp_project/Driver_Framework/dev_frame.c
+        - path: ../../../../../General_template_Project/Driver_Framework/dev_frame.c
+        - path: ../../../../../General_template_Project/Driver_Framework/i2c/df_iic.c
+        - path: ../../../../../General_template_Project/Driver_Framework/key/df_key.c
       folders: []
     - name: control
-      files: []
-      folders: []
-    - name: shell
       files:
-        - path: ../../../../../../../32_temp_project/Middleware/shell/shell.c
-      folders: []
-    - name: trans
-      files: []
+        - path: ../../../../../General_template_Project/Control/filter.c
+        - path: ../../../../../General_template_Project/Control/pid.c
       folders: []
     - name: bsp
       files:
-        - path: ../bsp/CORE/stm32f4xx_it.c
-        - path: ../bsp/CORE/system_stm32f4xx.c
-        - path: ../bsp/CORE/startup_stm32f40_41xxx.s
+        - path: ../../../../../General_template_Project/BSP/stm32f4/CORE/stm32f4xx_it.c
+        - path: ../../../../../General_template_Project/BSP/stm32f4/CORE/system_stm32f4xx.c
+        - path: ../../../../../General_template_Project/BSP/stm32f4/CORE/startup_stm32f40_41xxx.s
+      folders: []
+    - name: middleware
+      files:
+        - path: ../../../../../General_template_Project/Middleware/shell/shell.c
+        - path: ../../../../../General_template_Project/Middleware/trans/stde.c
+        - path: ../../../../../General_template_Project/Middleware/trans/terminal_link.c
       folders: []
 dependenceList: []
 outDir: build
@@ -49,14 +65,14 @@ targets:
         - STM32F40_41xxx
       incList:
         - ../bsp
-        - ../bsp/CORE
-        - ../../../../../../../32_temp_project/BSP/CMSIS
-        - ../../../../../../../32_temp_project/BSP/CMSIS/Core
-        - ../../../../../../../32_temp_project/BSP/CMSIS/Core/Include
-        - ../../../../../../../32_temp_project/BSP/CMSIS/Core/Include/m-profile
-        - ../../../../../../../32_temp_project/Device
-        - ../../../../../../../32_temp_project/Driver_Framework
-        - ../../../../../../../32_temp_project/Middleware
+        - ../app
+        - ../../../../../General_template_Project/BSP/CMSIS/Core/Include
+        - ../../../../../General_template_Project/BSP/CMSIS/Core/Include/m-profile
+        - ../../../../../General_template_Project/BSP/stm32f4/CORE
+        - ../../../../../General_template_Project/Control
+        - ../../../../../General_template_Project/Device
+        - ../../../../../General_template_Project/Driver_Framework
+        - ../../../../../General_template_Project/Middleware
         - .cmsis/include
         - RTE/_fly_debug
       libList: []
@@ -72,28 +88,24 @@ targets:
           afterBuildTasks: []
           asm-compiler:
             $use: asm-auto
-            misc-controls: ""
           beforeBuildTasks: []
           c/cpp-compiler:
             language-c: c99
             language-cpp: c++11
-            link-time-optimization: false
             one-elf-section-per-function: true
             optimization: level-0
             short-enums#wchar: true
             warnings: no-warnings
           global:
             output-debug-info: enable
-            use-microLIB: false
+            use-microLIB: true
           linker:
-            $disableOutputTask: true
             $outputTaskExcludes:
               - .bin
             misc-controls: --diag_suppress=L6329
             output-format: elf
             ro-base: "0x08000000"
             rw-base: "0x20000000"
-            xo-base: ""
         scatterFilePath: ""
         storageLayout:
           RAM:
@@ -174,9 +186,14 @@ targets:
         baseAddr: ""
         bin: ""
         cpuInfo:
-          cpuName: "null"
-          vendor: "null"
+          cpuName: STM32F407VE
+          vendor: ST
         otherCmds: ""
         proType: 1
-        speed: 8000
-    uploader: JLink
+        speed: 50000
+      OpenOCD:
+        baseAddr: "0x08000000"
+        bin: ""
+        interface: cmsis-dap
+        target: stm32f4x
+    uploader: OpenOCD

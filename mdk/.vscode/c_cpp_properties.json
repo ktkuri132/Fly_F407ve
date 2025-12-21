@@ -3,17 +3,21 @@
         {
             "name": "fly_debug",
             "includePath": [
-                "c:\\Users\\34575\\Desktop\\Code\\STM32\\Fly_F407ve\\bsp",
-                "c:\\Users\\34575\\Desktop\\Code\\STM32\\Fly_F407ve\\bsp\\CORE",
-                "C:\\32_temp_project\\BSP\\CMSIS",
-                "C:\\32_temp_project\\BSP\\CMSIS\\Core",
-                "C:\\32_temp_project\\BSP\\CMSIS\\Core\\Include",
-                "C:\\32_temp_project\\BSP\\CMSIS\\Core\\Include\\m-profile",
-                "C:\\32_temp_project\\Device",
-                "C:\\32_temp_project\\Driver_Framework",
-                "C:\\32_temp_project\\Middleware",
-                "c:\\Users\\34575\\Desktop\\Code\\STM32\\Fly_F407ve\\app",
-                "C:\\32_temp_project\\Middleware\\shell"
+                "c:\\Users\\ktkuri\\Desktop\\Fly_F407ve\\bsp",
+                "c:\\Users\\ktkuri\\Desktop\\Fly_F407ve\\app",
+                "C:\\General_template_Project\\BSP\\CMSIS\\Core\\Include",
+                "C:\\General_template_Project\\BSP\\CMSIS\\Core\\Include\\m-profile",
+                "C:\\General_template_Project\\BSP\\stm32f4\\CORE",
+                "C:\\General_template_Project\\Control",
+                "C:\\General_template_Project\\Device",
+                "C:\\General_template_Project\\Driver_Framework",
+                "C:\\General_template_Project\\Middleware",
+                "C:\\General_template_Project\\Device\\mpu6050",
+                "C:\\General_template_Project\\Device\\hmc588",
+                "C:\\General_template_Project\\Driver_Framework\\i2c",
+                "C:\\General_template_Project\\Driver_Framework\\key",
+                "C:\\General_template_Project\\Middleware\\shell",
+                "C:\\General_template_Project\\Middleware\\trans"
             ],
             "defines": [
                 "STM32F40_41xxx",

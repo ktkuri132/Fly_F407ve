@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx</Define>
               <Undefine></Undefine>
-              <IncludePath>..\bsp;..\bsp\CORE;C:\32_temp_project\BSP\CMSIS;C:\32_temp_project\BSP\CMSIS\Core;C:\32_temp_project\BSP\CMSIS\Core\Include;C:\32_temp_project\BSP\CMSIS\Core\Include\m-profile;C:\32_temp_project\Device;C:\32_temp_project\Driver_Framework;C:\32_temp_project\Middleware</IncludePath>
+              <IncludePath>..\bsp;..\app;C:\General_template_Project\BSP\CMSIS\Core\Include;C:\General_template_Project\BSP\CMSIS\Core\Include\m-profile;C:\General_template_Project\BSP\stm32f4\CORE;C:\General_template_Project\Control;C:\General_template_Project\Device;C:\General_template_Project\Driver_Framework;C:\General_template_Project\Middleware</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -389,13 +389,87 @@
               <FileType>1</FileType>
               <FilePath>..\app\main.c</FilePath>
             </File>
+            <File>
+              <FileName>control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\control.c</FilePath>
+            </File>
+            <File>
+              <FileName>init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\init.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>devive</GroupName>
+          <Files>
+            <File>
+              <FileName>inv_mpu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\General_template_Project\Device\mpu6050\inv_mpu.c</FilePath>
+            </File>
+            <File>
+              <FileName>inv_mpu_dmp_motion_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\General_template_Project\Device\mpu6050\inv_mpu_dmp_motion_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>hmc588.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\General_template_Project\Device\hmc588\hmc588.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>driver</GroupName>
+          <Files>
+            <File>
+              <FileName>i2c_bus.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\i2c_bus.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c_dev.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\i2c_dev.c</FilePath>
+            </File>
+            <File>
+              <FileName>irq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\irq.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>misc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\misc.c</FilePath>
+            </File>
+            <File>
+              <FileName>nvic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\nvic.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\usart.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>drivrt_framework</GroupName>
@@ -403,25 +477,34 @@
             <File>
               <FileName>dev_frame.c</FileName>
               <FileType>1</FileType>
-              <FilePath>C:\32_temp_project\Driver_Framework\dev_frame.c</FilePath>
+              <FilePath>C:\General_template_Project\Driver_Framework\dev_frame.c</FilePath>
+            </File>
+            <File>
+              <FileName>df_iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\General_template_Project\Driver_Framework\i2c\df_iic.c</FilePath>
+            </File>
+            <File>
+              <FileName>df_key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\General_template_Project\Driver_Framework\key\df_key.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
           <GroupName>control</GroupName>
-        </Group>
-        <Group>
-          <GroupName>shell</GroupName>
           <Files>
             <File>
-              <FileName>shell.c</FileName>
+              <FileName>filter.c</FileName>
               <FileType>1</FileType>
-              <FilePath>C:\32_temp_project\Middleware\shell\shell.c</FilePath>
+              <FilePath>C:\General_template_Project\Control\filter.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\General_template_Project\Control\pid.c</FilePath>
             </File>
           </Files>
-        </Group>
-        <Group>
-          <GroupName>trans</GroupName>
         </Group>
         <Group>
           <GroupName>bsp</GroupName>
@@ -429,17 +512,37 @@
             <File>
               <FileName>stm32f4xx_it.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\bsp\CORE\stm32f4xx_it.c</FilePath>
+              <FilePath>C:\General_template_Project\BSP\stm32f4\CORE\stm32f4xx_it.c</FilePath>
             </File>
             <File>
               <FileName>system_stm32f4xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\bsp\CORE\system_stm32f4xx.c</FilePath>
+              <FilePath>C:\General_template_Project\BSP\stm32f4\CORE\system_stm32f4xx.c</FilePath>
             </File>
             <File>
               <FileName>startup_stm32f40_41xxx.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\bsp\CORE\startup_stm32f40_41xxx.s</FilePath>
+              <FilePath>C:\General_template_Project\BSP\stm32f4\CORE\startup_stm32f40_41xxx.s</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>middleware</GroupName>
+          <Files>
+            <File>
+              <FileName>shell.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\General_template_Project\Middleware\shell\shell.c</FilePath>
+            </File>
+            <File>
+              <FileName>stde.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\General_template_Project\Middleware\trans\stde.c</FilePath>
+            </File>
+            <File>
+              <FileName>terminal_link.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\General_template_Project\Middleware\trans\terminal_link.c</FilePath>
             </File>
           </Files>
         </Group>
