@@ -13,11 +13,15 @@ virtualFolder:
         - path: ../app/main.c
         - path: ../app/control.c
         - path: ../app/init.c
+        - path: ../app/irq.c
+        - path: ../app/env.c
       folders: []
     - name: devive
       files:
         - path: ../../../../../General_template_Project/Device/mpu6050/inv_mpu.c
         - path: ../../../../../General_template_Project/Device/mpu6050/inv_mpu_dmp_motion_driver.c
+        - path: ../../../../../General_template_Project/Device/hmc588/hmc588.c
+        - path: ../../../../../General_template_Project/Device/bmp280/bmp280.c
       folders: []
     - name: driver
       files:
@@ -29,13 +33,16 @@ virtualFolder:
         - path: ../bsp/misc.c
         - path: ../bsp/nvic.c
         - path: ../bsp/usart.c
-        - path: ../bsp/irq.c
+        - path: ../bsp/pwm.c
+        - path: ../bsp/bsp_irq.c
+        - path: ../bsp/tim.c
       folders: []
     - name: drivrt_framework
       files:
         - path: ../../../../../General_template_Project/Driver_Framework/dev_frame.c
         - path: ../../../../../General_template_Project/Driver_Framework/i2c/df_iic.c
         - path: ../../../../../General_template_Project/Driver_Framework/key/df_key.c
+        - path: ../../../../../General_template_Project/Driver_Framework/irq/df_irq.c
       folders: []
     - name: control
       files:
@@ -196,4 +203,11 @@ targets:
         bin: ""
         interface: cmsis-dap
         target: stm32f4x
-    uploader: OpenOCD
+      pyOCD:
+        baseAddr: "0x08000000"
+        bin: ""
+        config: .eide/fly_debug.pyocd.yaml
+        otherCmds: ""
+        speed: 4M
+        targetName: cortex_m
+    uploader: JLink

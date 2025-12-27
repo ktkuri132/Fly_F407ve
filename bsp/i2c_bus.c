@@ -88,3 +88,10 @@ SIAS i2c1_bus = {
     .Soft_SDA_OUT = iic1_sda_out,
     .Soft_READ_SDA = iic1_read_sda,
 };
+
+int I2C1_Init(dev_arg_t arg)
+{
+    (void)arg;
+    Soft_IIC_Init(&i2c1_bus);
+    return 0;
+}
